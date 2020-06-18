@@ -210,7 +210,7 @@ settimeout(function() {
 				//	continue;
 					if ( class_array[i].search("telephony") > -1 )
 						continue;
-					if ( class_array[i].search("com.android") != -1 ) 
+					if ( class_array[i].search("Datagram") != -1 ) 
 						target_class.push(class_array[i].replace(/\"/g,""))
 				}
 				console.log("done filtering");

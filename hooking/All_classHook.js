@@ -29,7 +29,10 @@ function traceClass(targetClass) {
     var hook;
     try {
         hook = Java.use(targetClass);
-	var exists = hook.exists.clone({ traps: 'all' });
+		try{
+		var exists = hook.exists.clone({ traps: 'all' });}
+		catch(e){
+		}
 
     } catch (e) {
         console.error("trace class failed", e);
@@ -203,8 +206,8 @@ setTimeout(function() {
 	for ( i = 0; i < class_array.length; i++ ){
 		//if ( class_array[i].indexOf(".") == -1  || class_array[i].length < 6)
 		//	continue;
-		if ( class_array[i].search("com.tutk.TuTkClient") != -1 ) 
-			target_class.push(class_array[i].replace(/\"/g,""))
+		if ( class_array[i].search("login") != -1 ) {
+			target_class.push(class_array[i].replace(/\"/g,""))}
 	}
 	console.log("done filtering");
 	target_class.forEach(traceClass);
