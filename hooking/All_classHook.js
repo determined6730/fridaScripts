@@ -204,9 +204,7 @@ setTimeout(function() {
 	var i;
 	var target_class =[];
 	for ( i = 0; i < class_array.length; i++ ){
-		//if ( class_array[i].indexOf(".") == -1  || class_array[i].length < 6)
-		//	continue;
-		if ( class_array[i].search("login") != -1 ) {
+		if ( class_array[i].search("String") != -1 ) {
 			target_class.push(class_array[i].replace(/\"/g,""))}
 	}
 	console.log("done filtering");

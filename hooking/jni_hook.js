@@ -1,11 +1,16 @@
-Java.perform(function () {
-	// we create a javascript wrapper for MainActivity
-	var Activity = Java.use('com.erev0s.jniapp.MainActivity');
-	// replace the Jniint implementation
-	Activity.Jniint.implementation = function () {
-		// console.log is used to report information back to us
-		console.log("Inside Jniint now...");
-		// return this number of our choice
-		return 80085
-	};
-});
+var modules = Process.enumerateModulesSync()
+var size = modules.length
+
+var library = []
+for ( var i = 0; i < size ; i ++ ){
+	if ( modules[i].name.search("netsdk") != -1 ) 
+	{
+		console.log(modules[i].base)
+		console.log(modules[i].name)
+		console.log(modules[i].path)
+		console.log(modules[i].size)
+	}
+		
+}
+
+
